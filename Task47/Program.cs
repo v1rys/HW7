@@ -11,14 +11,14 @@ int n = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите m");
 int m = Convert.ToInt32(Console.ReadLine());
 
-double[,] ourMatrix = GetMatrix(m, n, -10, 10);
+double[,] ourMatrix = GetMatrix(m, n);
 PrintMatrix(ourMatrix);
 
 
 
 
 
-double[,] GetMatrix(int RowsCount, int columsCount, int LeftRenge, int rightRange)
+double[,] GetMatrix(int RowsCount, int columsCount)
 {
     double[,] matrix = new double[RowsCount, columsCount];
 
@@ -28,22 +28,23 @@ double[,] GetMatrix(int RowsCount, int columsCount, int LeftRenge, int rightRang
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] =  rand.Next(LeftRenge, rightRange);
+            matrix[i, j] = rand.NextDouble();
+            matrix[i, j] *= 10;
         }
     }
     return matrix;
 }
 
-void PrintMatrix ( double [,] matrix)
+void PrintMatrix(double[,] matrix)
 {
 
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write(matrix[i,j] + " ");
+            Console.Write($"{matrix[i, j]:f1}" + " ");
         }
         Console.WriteLine();
     }
-    
+
 }

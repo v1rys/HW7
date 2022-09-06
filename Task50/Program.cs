@@ -8,10 +8,10 @@
 // 8 4 2 4
 
 
-Console.WriteLine("Введите n");
+Console.WriteLine("Введите размер массива по горизонтали");
 int n = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите m");
+Console.WriteLine("Введите размер массива по вертикали");
 int m = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Введите кординат по горизонтали ");
@@ -55,7 +55,7 @@ int[,] GetMatrix(int RowsCount, int columsCount, int LeftRenge, int rightRange)
 void PrintCoordinates(int[,] matrix, int festCoordinatts, int secondCcoordinates)
 
 {
-    Console.WriteLine(matrix[festCoordinatts, secondCcoordinates]);
+    Console.WriteLine($"Вашее цисло по кординатам { festCoordinatts},{ secondCcoordinates},  {matrix[festCoordinatts, secondCcoordinates]}");
 }
 
 void PrintMatrix(int[,] matrix)
