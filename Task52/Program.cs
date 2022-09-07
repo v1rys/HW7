@@ -58,7 +58,7 @@ void SummaNumbersVerticaliMassive(double[,] matrix, double Verticale)
     {
         double sum = 0;
 
-        for (int j = 0; j <= i ; j++)
+        for (int j = 0; j < matrix.GetLength(1) ; j++)
         {
             sum = sum + matrix[i, j];
 
