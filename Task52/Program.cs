@@ -14,7 +14,7 @@ int m = Convert.ToInt32(Console.ReadLine());
 
 double[,] ourMatrix = GetMatrix(m, n, 1, 10);
 PrintMatrix(ourMatrix);
-SummaNumbersVerticaliMassive(ourMatrix, m);
+SummaNumbersVerticaliMassive(ourMatrix, n);
 
 
 
@@ -26,7 +26,7 @@ double[,] GetMatrix(int RowsCount, int columsCount, int LeftRenge, int rightRang
 
     Random rand = new Random();
 
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(1); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
@@ -53,15 +53,18 @@ void PrintMatrix(double[,] matrix)
 
 void SummaNumbersVerticaliMassive(double[,] matrix, double Verticale)
 {
+    double sum = 0;
+
     for (int i = 0; i < matrix.GetLength(1); i++)
     {
-        double sum = 0;
-        for (int j = 0; j < matrix.GetLength(0); j++)
+
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
             sum = sum + matrix[i, j];
 
         }
         Console.WriteLine(sum / Verticale);
     }
+
 
 }
