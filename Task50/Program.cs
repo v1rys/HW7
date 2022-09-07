@@ -19,21 +19,33 @@ int x = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Введите координат по вертикали");
 int y = Convert.ToInt32(Console.ReadLine());
-
-if (x > n)
+int FindVRightNumFirst(int festCoordinatts)
 {
-    Console.WriteLine("Таких коодинат в массиве нет");
+    int x = festCoordinatts;
+    while (x > n)
+    {
+        Console.WriteLine("Таких коодинат в массиве нет");
+        Console.WriteLine("Введите кординат по горизонтали ");
+        x = Convert.ToInt32(Console.ReadLine());
+    }
+    return x;
 }
-else if (y > m)
+int FindVRightNumSecond(int secondCcoordinates)
 {
-    Console.WriteLine("Таких координат в массиве нет");
+    int y = secondCcoordinates;
+    while (y > m)
+    {
+        Console.WriteLine("Таких координат в массиве нет");
+        Console.WriteLine("Введите координат по вертикали");
+        y = Convert.ToInt32(Console.ReadLine());
+    }
+    return y;
 }
-else
-{
-    int[,] ourMatrix = GetMatrix(m, n, -10, 10);
-    PrintMatrix(ourMatrix);
-    PrintCoordinates(ourMatrix, x, y);
-}
+int RightCordinatesFirst = FindVRightNumFirst(x);
+int RightCordinatesSecond = FindVRightNumSecond(y);
+int[,] ourMatrix = GetMatrix(m, n, -10, 10);
+PrintMatrix(ourMatrix);
+PrintCoordinates(ourMatrix, RightCordinatesFirst, RightCordinatesSecond);
 
 
 int[,] GetMatrix(int RowsCount, int columsCount, int LeftRenge, int rightRange)
@@ -55,7 +67,7 @@ int[,] GetMatrix(int RowsCount, int columsCount, int LeftRenge, int rightRange)
 void PrintCoordinates(int[,] matrix, int festCoordinatts, int secondCcoordinates)
 
 {
-    Console.WriteLine($"Вашее цисло по кординатам { festCoordinatts},{ secondCcoordinates},  {matrix[festCoordinatts, secondCcoordinates]}");
+    Console.WriteLine($"Вашее число по кординатам {festCoordinatts},{secondCcoordinates},  {matrix[festCoordinatts, secondCcoordinates]}");
 }
 
 void PrintMatrix(int[,] matrix)
