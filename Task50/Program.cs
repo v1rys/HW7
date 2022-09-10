@@ -44,33 +44,25 @@ int FindVRightNumSecond(int secondCcoordinates)
 int RightCordinatesFirst = FindVRightNumFirst(x);
 int RightCordinatesSecond = FindVRightNumSecond(y);
 int[,] ourMatrix = GetMatrix(m, n, -10, 10);
-PrintMatrix(ourMatrix);
-PrintCoordinates(ourMatrix, RightCordinatesFirst, RightCordinatesSecond);
-
+PrintMatrix(ourMatrix , RightCordinatesFirst, RightCordinatesSecond );
 
 int[,] GetMatrix(int RowsCount, int columsCount, int LeftRenge, int rightRange)
 {
     int[,] matrix = new int[RowsCount, columsCount];
 
-    Random rand = new Random();
 
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = rand.Next(LeftRenge, rightRange);
+            matrix[i, j] = Convert.ToInt32(new Random().Next(0,21));
         }
     }
     return matrix;
 }
 
-void PrintCoordinates(int[,] matrix, int festCoordinatts, int secondCcoordinates)
 
-{
-    Console.WriteLine($"Вашее число по кординатам {festCoordinatts},{secondCcoordinates},  {matrix[festCoordinatts, secondCcoordinates]}");
-}
-
-void PrintMatrix(int[,] matrix)
+void PrintMatrix(int[,] matrix , int festCoordinatts, int secondCcoordinates)
 {
 
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -82,5 +74,6 @@ void PrintMatrix(int[,] matrix)
         Console.WriteLine();
 
     }
+    Console.WriteLine($"Элемент массива по кардинатам {festCoordinatts} , {secondCcoordinates} найден {matrix[festCoordinatts,secondCcoordinates]}");
 
 }
