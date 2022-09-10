@@ -55,7 +55,7 @@ int[,] GetMatrix(int RowsCount, int columsCount, int LeftRenge, int rightRange)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = Convert.ToInt32(new Random().Next(0,21));
+            matrix[i, j] = Convert.ToInt32(new Random().Next(LeftRenge, rightRange));
         }
     }
     return matrix;
