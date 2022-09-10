@@ -6,15 +6,15 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,7; 5,7; 3,7; 3.
 
-Console.WriteLine("Введите n");
+Console.WriteLine("Введите количество строк вашего двумерного массива ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите m");
+Console.WriteLine("Введите количество столбцов вашего двумерного массива ");
 int m = Convert.ToInt32(Console.ReadLine());
 
-double[,] ourMatrix = GetMatrix(m, n, 1, 10);
+double[,] ourMatrix = GetMatrix(n, m, 1, 10);
 PrintMatrix(ourMatrix);
-SummaNumbersVerticaliMassive(ourMatrix, m);
+SummaNumbersVerticaliMassive(ourMatrix, n, m );
 
 
 
@@ -26,7 +26,7 @@ double[,] GetMatrix(int RowsCount, int columsCount, int LeftRenge, int rightRang
 
     Random rand = new Random();
 
-    for (int i = 0; i < matrix.GetLength(1); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
@@ -51,19 +51,20 @@ void PrintMatrix(double[,] matrix)
 
 }
 
-void SummaNumbersVerticaliMassive(double[,] matrix, double Verticale)
+void SummaNumbersVerticaliMassive(double[,] matrix,  double RowsCount, double columsCount)
 {
-
-    for (int i = 0; i < matrix.GetLength(1); i++)
+   
+  
+    for (int i = 0; i <columsCount; i++)
     {
         double sum = 0;
 
-        for (int j = 0; j < matrix.GetLength(1) ; j++)
+        for (int j = 0; j < RowsCount ; j++)
         {
-            sum = sum + matrix[i, j];
+            sum = sum + matrix[j, i];
 
         }
-        Console.WriteLine(sum / Verticale);
+        Console.WriteLine($"Сумма {i} столбца = {sum / RowsCount:f2}");
     }
 
 
