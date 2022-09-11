@@ -22,7 +22,7 @@ int y = Convert.ToInt32(Console.ReadLine());
 int FindVRightNumFirst(int festCoordinatts)
 {
     int x = festCoordinatts;
-    while (x > n)
+    while (x > n-1)
     {
         Console.WriteLine("Таких коодинат в массиве нет");
         Console.WriteLine("Введите кординат по горизонтали ");
@@ -33,7 +33,7 @@ int FindVRightNumFirst(int festCoordinatts)
 int FindVRightNumSecond(int secondCcoordinates)
 {
     int y = secondCcoordinates;
-    while (y > m)
+    while (y > m -1)
     {
         Console.WriteLine("Таких координат в массиве нет");
         Console.WriteLine("Введите координат по вертикали");
@@ -70,6 +70,7 @@ void PrintMatrix(int[,] matrix , int festCoordinatts, int secondCcoordinates)
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             Console.Write(matrix[i, j] + " ");
+         
         }
         Console.WriteLine();
 
