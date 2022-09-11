@@ -14,10 +14,10 @@ int n = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите размер массива по вертикали");
 int m = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите кординат по горизонтали ");
+Console.WriteLine("Введите кординат по горизонтали, ПОМНИТЕ, координаты в массиве начинаются с 0 ");
 int x = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите координат по вертикали");
+Console.WriteLine("Введите координат по вертикали, ПОМНИТЕ, координаты в массиве начинаются с 0");
 int y = Convert.ToInt32(Console.ReadLine());
 int FindVRightNumFirst(int festCoordinatts)
 {
